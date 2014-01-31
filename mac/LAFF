@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ${0%/*}/notebooks
+git pull
+../bin/python ../bin/ipython notebook --ipython-dir=../.ipython
