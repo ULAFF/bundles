@@ -1,7 +1,8 @@
 #!/bin/bash
-cd ${0%/*}
-bash Miniconda3-2.2.2-Linux-x86.sh
-#bash Miniconda3-2.2.2-Linux-x86_64.sh
+ARCH="x86"
+PKGNAME="linux32LAFFpkg"
+cd "$(dirname "$(readlink -f "${0}")")"
+bash Miniconda3-2.2.2-Linux-$ARCH.sh
 mv ~/anaconda ~/LAFF
 cd ~/LAFF/bin
 ./python ./conda update conda --y
@@ -24,4 +25,6 @@ git init
 cd -
 cp ../shared/config ~/LAFF/notebooks/.git
 cp LAFF ~/LAFF/
-tar -jcf linux32LAFFpkg`date +\(%b-%d-%Y\)`.tar.bz2 -C ~/ LAFF
+tar -jcf $PKGNAME`date +\(%b-%d-%Y\)`.tar.bz2 -C ~/ LAFF
+echo "Finished building linux LAFF package."
+read

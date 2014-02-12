@@ -1,4 +1,5 @@
 #!/bin/bash
-cd ${0%/*}/notebooks
+LAFFDIR="$(dirname "$(readlink -f "${0}")")"
+cd $LAFFDIR/notebooks
 git pull
 ../bin/python ../bin/ipython notebook --ipython-dir=../.ipython
