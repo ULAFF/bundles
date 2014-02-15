@@ -14,5 +14,6 @@ Scripts to build LAFF packages for Windows, Mac, Linux, and a cross-platform vir
 &nbsp;&nbsp;&nbsp;&nbsp;[&#x1525; VirtualBox](https://www.virtualbox.org)  
 &nbsp;&nbsp;&nbsp;&nbsp;[&#x1525; Vagrant](http://www.vagrantup.com)  
 &nbsp;&nbsp;&nbsp;&nbsp;[&#x1525; VirtualBox Guest Additions Vagrant plugin](https://github.com/dotless-de/vagrant-vbguest)  
+&nbsp;&nbsp;&nbsp;&nbsp;[&#x1525; PortableGit](https://code.google.com/p/msysgit/downloads/list?can=2&q=PortableGit&colspec=Filename+Summary+Uploaded+ReleaseDate+Size+DownloadCount)  
 &nbsp;&nbsp;&nbsp;&nbsp;[&#x21ac; Git](http://git-scm.com)  
-&nbsp;&nbsp;&nbsp;&nbsp;[&#x1525; PortableGit](https://code.google.com/p/msysgit/downloads/list?can=2&q=PortableGit&colspec=Filename+Summary+Uploaded+ReleaseDate+Size+DownloadCount) 
+&nbsp;&nbsp;&nbsp;&nbsp;[&#x21ac; Pyzo](http://www.pyzo.org/)  
