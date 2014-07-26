@@ -1,5 +1,5 @@
 #!/bin/bash
-INSTALL_DIR=${0%/*}
+INSTALL_DIR=$PWD
 cd $INSTALL_DIR
 MINICONDA_SETUP=Miniconda3-3.5.5-MacOSX-x86_64.sh
 echo $'\n'Downloading $MINICONDA_SETUP
@@ -26,7 +26,7 @@ MATHJAX_VERSION=2.4-latest
 echo $'\n'Downloading MathJax-$MATHJAX_VERSION
 curl -# -L https://github.com/mathjax/MathJax/archive/v$MATHJAX_VERSION.tar.gz -O
 echo Decompressing MathJax...
-tar -jxf v$MATHJAX_VERSION.tar.gz -C $STATIC_DIR
+tar -zxf v$MATHJAX_VERSION.tar.gz -C $STATIC_DIR
 mv $STATIC_DIR/MathJax-$MATHJAX_VERSION $STATIC_DIR/mathjax
 cp -r ../shared/custom $STATIC_DIR
 cp LAFF $ULAFF_DIR
