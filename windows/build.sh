@@ -1,9 +1,21 @@
 #!/bin/bash
-INSTALL_DIR=$PWD
-cd $INSTALL_DIR
-MINICONDA_SETUP=Miniconda3-3.5.5-Windows-x86.exe
+if ! [[ (( $1 == x86 || $1 == x86_64 )) ]]
+then
+  echo $'\n'Input validation failed!
+  echo "    Usage: ./build.sh [arch]"
+  echo "    Please specify desired architecture by passing the correct argument:"
+  echo "      * [arch] should be either x86 for 32-bit or x86_64 for 64-bit."
+  echo $'\n'"Press the Enter key to continue..."
+  read
+  exit 1
+fi
+
+BUILD_DIR=${0%/*}
+cd $BUILD_DIR
+MINICONDA_SETUP=Miniconda3-3.5.5-Windows-$1.exe
 echo $'\n'Downloading $MINICONDA_SETUP
 curl -# -L http://repo.continuum.io/miniconda/$MINICONDA_SETUP -O
+INSTALL_DIR=~
 ./$MINICONDA_SETUP
 
 ULAFF_DIR=$INSTALL_DIR/ULAFF
@@ -32,7 +44,6 @@ tar -zxf v$MATHJAX_VERSION.tar.gz -C $STATIC_DIR
 mv $STATIC_DIR/MathJax-$MATHJAX_VERSION $STATIC_DIR/mathjax
 cp -r ../shared/custom $STATIC_DIR
 cp LAFF.bat $ULAFF_DIR
-cp LAFF.bat.lnk $ULAFF_DIR
 
 echo $'\n'Cleaning up...
 rm -rf $SOFTWARE_DIR/pkgs
@@ -40,4 +51,3 @@ rm $MINICONDA_SETUP
 rm v$MATHJAX_VERSION.tar.gz
 
 echo $'\n'All Done!
-read
