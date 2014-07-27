@@ -32,7 +32,6 @@ tar -zxf v$MATHJAX_VERSION.tar.gz -C $STATIC_DIR
 mv $STATIC_DIR/MathJax-$MATHJAX_VERSION $STATIC_DIR/mathjax
 cp -r ../shared/custom $STATIC_DIR
 cp LAFF.bat $ULAFF_DIR
-cp LAFF.bat.lnk $ULAFF_DIR
 
 echo $'\n'Cleaning up...
 rm -rf $SOFTWARE_DIR/pkgs
