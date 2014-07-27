@@ -31,7 +31,7 @@ cd $SOFTWARE_DIR/bin
 ./python ./conda update conda --y
 ./python ./conda install setuptools numpy sympy matplotlib --y
 ./python ./easy_install -U pyparsing
-./python .conda install ipython-notebook --y
+./python ./conda install ipython-notebook --y
 cd -
 
 STATIC_DIR=$SOFTWARE_DIR/.ipython/profile_default/static
