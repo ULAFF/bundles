@@ -15,10 +15,12 @@ echo; git -C $ULAFF_DIR clone https://github.com/ULAFF/tools.git
 SOFTWARE_DIR=$ULAFF_DIR/software
 mv ~/miniconda3 $SOFTWARE_DIR
 echo $'\n'Installing Python Packages
-$SOFTWARE_DIR/bin/python $SOFTWARE_DIR/bin/conda update conda --y
-$SOFTWARE_DIR/bin/python $SOFTWARE_DIR/bin/conda install setuptools numpy sympy matplotlib --y
-$SOFTWARE_DIR/bin/python $SOFTWARE_DIR/bin/easy_install -U pyparsing
-$SOFTWARE_DIR/bin/python $SOFTWARE_DIR/bin/conda install ipython-notebook --y
+cd $SOFTWARE_DIR/bin
+./python ./conda update conda --y
+./python ./conda install setuptools numpy sympy matplotlib --y
+./python ./easy_install -U pyparsing
+./python .conda install ipython-notebook --y
+cd -
 
 STATIC_DIR=$SOFTWARE_DIR/.ipython/profile_default/static
 mkdir -p $STATIC_DIR

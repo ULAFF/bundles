@@ -1,8 +1,5 @@
 #!/bin/bash
 ULAFF_DIR=${0%/*}
 cd $ULAFF_DIR
-#git pull https://github.com/ULAFF/notebooks.git
-#git pull https://github.com/ULAFF/lib.git
-#git pull https://github.com/ULAFF/tools.git
 export PYTHONPATH=$ULAFF_DIR/lib
 $ULAFF_DIR/software/bin/python $ULAFF_DIR/software/bin/ipython notebook --ipython-dir=$ULAFF_DIR/software/.ipython
