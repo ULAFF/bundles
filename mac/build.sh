@@ -1,9 +1,10 @@
 #!/bin/bash
-INSTALL_DIR=$PWD
-cd $INSTALL_DIR
+BUILD_DIR=${0%/*}
+cd $BUILD_DIR
 MINICONDA_SETUP=Miniconda3-3.5.5-MacOSX-x86_64.sh
 echo $'\n'Downloading $MINICONDA_SETUP
 curl -# -L http://repo.continuum.io/miniconda/$MINICONDA_SETUP -O
+INSTALL_DIR=~
 bash $MINICONDA_SETUP
 
 ULAFF_DIR=$INSTALL_DIR/ULAFF
@@ -13,7 +14,7 @@ echo; git -C $ULAFF_DIR clone https://github.com/ULAFF/lib.git
 echo; git -C $ULAFF_DIR clone https://github.com/ULAFF/tools.git
 
 SOFTWARE_DIR=$ULAFF_DIR/software
-mv ~/miniconda3 $SOFTWARE_DIR
+mv $INSTALL_DIR/miniconda3 $SOFTWARE_DIR
 echo $'\n'Installing Python Packages
 cd $SOFTWARE_DIR/bin
 ./python ./conda update conda --y
