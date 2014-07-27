@@ -1,3 +1,2 @@
-cd notebooks
-..\PortableGit\cmd\git pull
-..\Scripts\ipython notebook --ipython-dir=..\.ipython
+set PYTHONPATH=%CD%\lib
+%CD%\software\Scripts\ipython notebook --ipython-dir=%CD%\software\.ipython
