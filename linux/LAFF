@@ -1,6 +1,5 @@
 #!/bin/bash
-LAFFDIR="$(dirname "$(readlink -f "${0}")")"
-cd $LAFFDIR/notebooks
-git pull
-unset PYTHONPATH
-../bin/python ../bin/ipython notebook --ipython-dir=../.ipython
+ULAFFDIR="$(dirname "$(readlink -f "${0}")")"
+cd $ULAFF_DIR
+export PYTHONPATH=$ULAFF_DIR/lib
+$ULAFF_DIR/software/bin/python $ULAFF_DIR/software/bin/ipython notebook --ipython-dir=$ULAFF_DIR/software/.ipython
