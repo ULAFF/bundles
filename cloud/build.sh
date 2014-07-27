@@ -9,9 +9,9 @@ bash $MINICONDA_SETUP
 
 ULAFF_DIR=$INSTALL_DIR/ULAFF
 mkdir $ULAFF_DIR
-echo; git -C $ULAFF_DIR clone https://github.com/ULAFF/notebooks.git -b notebooks
-echo; git -C $ULAFF_DIR clone https://github.com/ULAFF/lib.git
-echo; git -C $ULAFF_DIR clone https://github.com/ULAFF/tools.git
+echo; git clone https://github.com/ULAFF/notebooks.git -b notebooks $ULAFF_DIR/notebooks
+echo; git clone https://github.com/ULAFF/lib.git $ULAFF_DIR/lib
+echo; git clone https://github.com/ULAFF/tools.git $ULAFF_DIR/tools
 
 SOFTWARE_DIR=$ULAFF_DIR/software
 mv $INSTALL_DIR/miniconda3 $SOFTWARE_DIR
