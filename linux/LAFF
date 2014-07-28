@@ -1,5 +1,5 @@
 #!/bin/bash
-ULAFFDIR="$(dirname "$(readlink -f "${0}")")"
+ULAFF_DIR="$(dirname "$(readlink -f "${0}")")"
 cd $ULAFF_DIR
 export PYTHONPATH=$ULAFF_DIR/lib
 $ULAFF_DIR/software/bin/python $ULAFF_DIR/software/bin/ipython notebook --ipython-dir=$ULAFF_DIR/software/.ipython
